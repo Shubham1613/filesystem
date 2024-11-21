@@ -22,8 +22,8 @@ class LoginSerializer(serializers.Serializer):
 
         if not user:
             raise serializers.ValidationError("Invalid username or password.")
-        if not user.is_verified:
-            raise serializers.ValidationError("User account is not verified.")
+        # if not user.is_verified:
+        #     raise serializers.ValidationError("User account is not verified.")
 
         return user
 

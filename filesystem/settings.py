@@ -99,7 +99,7 @@ DATABASES = {
         'NAME': 'filesystem',           # Replace with your database name
         'USER': 'app',         # Replace with your username
         'PASSWORD': '1234', # Replace with your password
-        'HOST': 'localhost',      # Default is localhost
+        'HOST': '127.0.0.1',      # Default is localhost
         'PORT': '5432',           # Default PostgreSQL port
     }
 }
@@ -108,6 +108,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
+AUTH_USER_MODEL = 'app.CustomUser'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
