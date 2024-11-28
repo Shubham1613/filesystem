@@ -2,8 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework import status
-from .models import CustomUser
-from .serializers import UserSerializer, LoginSerializer, SignUpSerializer
+from .models import CustomUser, UploadedFile
+from .serializers import UserSerializer, LoginSerializer, SignUpSerializer, FileSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from itsdangerous import URLSafeSerializer
 

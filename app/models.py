@@ -43,3 +43,14 @@ class CustomUser(AbstractBaseUser):
     def __str__(self):
         return self.username
 
+
+class UploadedFile(models.Model):
+    file = models.FileField(upload_to='uploads/')
+    uploaded_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    allowed_extensions = ['pptx', 'docx', 'xlsx', 'jpeg']
+
+    def save(self, *args, **kwargs):
+        # Validate file extension
+        if self.file.name.split('.')[-1] not in self.allowed_extensions:
+            raise ValueError("Invalid file type. Allowed: pptx, docx, xlsx")
+        super().save(*args, **kwargs)
